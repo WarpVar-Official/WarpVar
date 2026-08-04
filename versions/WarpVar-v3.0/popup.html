@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>WarpVar (3.0)</title>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      width: 320px;
+      padding: 16px;
+      background-color: #0a0a0a;
+      blur:
+      color: #FFFFFF;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .logo {
+      width: 48px;
+      margin: auto;
+      display: block;
+    }
+
+    h3 {
+      margin-top: 8px;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .beta {
+      display: inline-block;
+      background: #FF0000;
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+    }
+
+    select,
+    input,
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      background-color: #111;
+      border: 1px solid #FFFFFF;
+      border-radius: 8px;
+      color: #808080;
+      font-family: monospace;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    select:hover,
+    input:hover,
+    button:hover {
+      background-color: #FFFFFF;
+      box-shadow: 0 0 6px #F0F0F0;
+    }
+
+    button {
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 14px;
+      background: #FFFFFF;
+      color: #0a0a0a;
+      border: none;
+      box-shadow: 0 0 10px #F0F0F0;
+    }
+
+    button:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 5px #F0F0F0;
+    }
+
+    #result {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #00ffcc;
+    }
+
+    .footer {
+      margin-top: 14px;
+      font-size: 0.7rem;
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon128.png" alt="WarpVar Logo" class="logo" />
+    <h3>WarpVar <span class="beta">3.0</span></h3>
+  </div>
+
+  <label>
+    Search:
+    <input id="searchBar" placeholder="Type to filter..." />
+  </label>
+
+  <label>
+    Variable:
+    <select id="varSelect" size="6">
+      <option value="">(Loading...)</option>
+    </select>
+  </label>
+
+  <label>
+    New Value:
+    <input id="varValue" placeholder="e.g. 5000" />
+  </label>
+
+  <label style="display:block;margin-top:8px;">
+    <input type="checkbox" id="foreverChk"> <strong>Forever</strong> (keep setting repeatedly)
+  </label>
+  <label style="display:block;margin-top:6px;">
+    Interval (ms): <input id="intervalMs" placeholder="e.g. 500" style="width:80px" />
+  </label>
+  <button id="applyBtn">Apply</button>
+  <div id="result"></div>
+
+  <div class="footer">For TurboWarp (Dev Only)</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WarpVar (Beta)</title>
+    <style>
+      body {
+        font-family: "Courier New", monospace;
+        width: 320px;
+        padding: 16px;
+        background-color: #0a0a0a;
+        color: #e5e5e5;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .logo {
+        width: 48px;
+        margin: auto;
+        display: block;
+      }
+
+      h3 {
+        margin-top: 8px;
+        font-size: 1.2rem;
+        color: #00ff99;
+      }
+
+      .beta {
+        display: inline-block;
+        background: #ffcc00;
+        color: #0a0a0a;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 6px;
+        margin-left: 6px;
+      }
+
+      label {
+        display: block;
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: #00ffcc;
+      }
+
+      select,
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        background-color: #111;
+        border: 1px solid #00ff99;
+        border-radius: 8px;
+        color: #00ff99;
+        font-family: monospace;
+        font-size: 0.9rem;
+        transition: 0.2s;
+      }
+
+      select:hover,
+      input:hover,
+      button:hover {
+        background-color: #001100;
+        box-shadow: 0 0 6px #00ff99;
+      }
+
+      button {
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 14px;
+        background: #00ff99;
+        color: #0a0a0a;
+        border: none;
+        box-shadow: 0 0 10px #00ff99;
+      }
+
+      button:active {
+        transform: scale(0.97);
+        box-shadow: 0 0 5px #00ff99;
+      }
+
+      #result {
+        margin-top: 12px;
+        font-size: 0.8rem;
+        color: #00ffcc;
+      }
+
+      .footer {
+        margin-top: 14px;
+        font-size: 0.7rem;
+        text-align: center;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="icons/icon128.png" alt="WarpVar Logo" class="logo" />
+      <h3>WarpVar <span class="beta">2.0</span></h3>
+    </div>
+
+    <label>Variable:
+      <select id="varSelect">
+        <option value="">(Loading...)</option>
+      </select>
+    </label>
+
+    <label>New Value:
+      <input id="varValue" placeholder="e.g. 5000" />
+    </label>
+
+    <button id="applyBtn">Apply</button>
+
+    <div id="result"></div>
+
+    <div class="footer">For TurboWarp</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
