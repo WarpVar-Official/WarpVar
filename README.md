@@ -1,4 +1,4 @@
-# 🌀 WarpVar
+# ⚡ WarpVar
 
 > Control TurboWarp project variables directly from your browser.
 
