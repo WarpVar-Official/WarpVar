@@ -10,13 +10,114 @@
       box-sizing: border-box;
     }
 
+    @property --border-angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    html {
+      margin: 0;
+      background: transparent;
+    }
+
     body {
       font-family: "Courier New", monospace;
       width: 400px;
       margin: 0;
       padding: 16px;
+      position: relative;
       background-color: #101c25;
+      border-radius: 16px;
       color: #FFFFFF;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: inherit;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent 0deg,
+        transparent 80deg,
+        #ffffff 120deg,
+        #ff8400 155deg,
+        transparent 210deg,
+        transparent 360deg
+      );
+      pointer-events: none;
+      animation: borderSpin 2.4s linear infinite;
+      transition: opacity 240ms ease;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: inherit;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent 0deg,
+        transparent 45deg,
+        #ff8400 85deg,
+        #024968 125deg,
+        #ffffff 170deg,
+        transparent 230deg,
+        transparent 360deg
+      );
+      opacity: 0;
+      pointer-events: none;
+      animation: borderSpin 1.2s linear infinite;
+      transition: opacity 240ms ease;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+    }
+
+    body.apply-border::after {
+      opacity: 1;
+      animation: borderSpin 1.2s linear infinite, applyBorderFlash 650ms ease-out;
+    }
+
+    body.apply-border::before {
+      opacity: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes borderSpin {
+      to {
+        --border-angle: 360deg;
+      }
+    }
+
+    @keyframes applyBorderFlash {
+      0% {
+        filter: brightness(1.9);
+      }
+      100% {
+        filter: brightness(1);
+      }
     }
 
     .header {
@@ -109,6 +210,25 @@
     button:active {
       transform: scale(0.97);
       box-shadow: 0 0 5px #F0F0F0;
+    }
+
+    button.apply-animate {
+      animation: applyPulse 420ms ease-out;
+    }
+
+    @keyframes applyPulse {
+      0% {
+        transform: scale(0.97);
+        box-shadow: 0 0 5px #F0F0F0;
+      }
+      45% {
+        transform: scale(1.03);
+        box-shadow: 0 0 18px #FFFFFF;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #F0F0F0;
+      }
     }
 
     #result {
