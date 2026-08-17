@@ -152,5 +152,5 @@ See the [`LICENSE`](LICENSE) file for license information.
 ---
 
 <p align="center">
-  Made by <a href="https://discord.com/users/1386885019397521419">Dr_Animalis</a> & <a href="https://discord.com/users/1349548957931405393">1_FOLLOW</a>
+  Made by <a href="https://discord.com/users/1386885019397521419">Dr_Animalis</a>, <a href="https://discord.com/users/1349548957931405393">1_FOLLOW</a>, & <a href="https://discord.com/users/1399691329671266304">CtrlAltSpace</a>
 </p>
