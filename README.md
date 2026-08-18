@@ -1,28 +1,30 @@
 # ⚡ WarpVar
 
-> Control TurboWarp project variables directly from your browser.
+> Control TurboWarp and Scratch project variables directly from your browser.
 
-WarpVar is a Chrome extension that lets you **view, filter, and change TurboWarp project variables instantly** without stopping your project.
+WarpVar is a Chrome extension that lets you **view, filter, and change project variables instantly** without stopping your project.
 
 🌐 **Website:** https://warpvar.wasmer.app/
 
-> ⚠️ **Note:** WarpVar is currently in development and works with **TurboWarp only**. It does not currently support Scratch's official website.
+> ⚠️ **Note:** WarpVar is currently in development. **v4.0 adds support for Scratch's official website**, while older versions are primarily designed for TurboWarp.
 
 ---
 
 ## ✨ Features
 
-* 📋 **Variable List** — View your project's variables in one place.
-* ⚡ **Instant Editing** — Change variable values directly while your project is running.
-* 🔎 **Advanced Filtering** — Quickly find the variable you're looking for.
-* 🎨 **Simple UI** — Clean and easy-to-use browser interface.
-* 🚀 **Fast Performance** — Designed to make variable editing quick and convenient.
+* 📋 **Variable List** - View your project's variables in one place.
+* ⚡ **Instant Editing** - Change variable values directly while your project is running.
+* 🔎 **Advanced Filtering** - Quickly find the variable you're looking for.
+* 🎨 **Simple UI** - Clean and easy-to-use browser interface.
+* 🚀 **Fast Performance** - Designed to make variable editing quick and convenient.
+* 🧩 **Scratch Support** - v4.0 supports projects on Scratch's official website.
+* ⚙️ **TurboWarp Support** - Continue using WarpVar with TurboWarp projects.
 
 ---
 
 ## 🧪 How It Works
 
-1. Open a project on **TurboWarp**.
+1. Open a project on **Scratch** or **TurboWarp**.
 2. Click the **WarpVar** extension icon in Chrome.
 3. View the available project variables.
 4. Select a variable and edit its value.
@@ -61,7 +63,7 @@ For example:
 ```text
 WarpVar/
 └── versions/
-    └── WarpVar-v3.0/
+    └── WarpVar-v4.0/
 ```
 
 Select the version folder containing `manifest.json`.
@@ -76,10 +78,11 @@ You can optionally click the **📌 Pin** icon to keep WarpVar easily accessible
 
 ## 📚 Versions
 
-| Version  | Status    | Description                                                              |
-| -------- | --------- | ------------------------------------------------------------------------ |
-| **v3.0** | 🟢 Latest | Enhanced detection, improved UI, better performance & advanced filtering |
-| **v2.0** | 🟡 Legacy | Stable version with basic variable listing and editing                   |
+| Version  | Status    | Description                                                                               |
+| -------- | --------- | ----------------------------------------------------------------------------------------- |
+| **v4.0** | 🟢 Latest | Scratch support, improved detection, enhanced UI, better performance & advanced filtering |
+| **v3.0** | 🟡 Legacy | Enhanced detection, improved UI, better performance & advanced filtering                  |
+| **v2.0** | ⚪ Legacy  | Stable version with basic variable listing and editing                                    |
 
 For downloads, check the **[Versions](https://warpvar.wasmer.app/#versions)** page.
 
@@ -92,7 +95,8 @@ WarpVar/
 │
 └── versions/
     ├── WarpVar-v2.0/
-    └── WarpVar-v3.0/
+    ├── WarpVar-v3.0/
+    └── WarpVar-v4.0/
 ```
 
 Each version is kept separately so older versions remain available without interfering with newer releases.
@@ -101,14 +105,14 @@ Each version is kept separately so older versions remain available without inter
 
 ## 🌐 Compatibility
 
-| Platform                   | Support                 |
-| -------------------------- | ----------------------- |
-| 🟢 TurboWarp               | Supported               |
-| 🔴 Scratch                 | Not currently supported |
-| 🟢 Google Chrome           | Supported               |
-| 🟡 Other Chromium browsers | May work                |
+| Platform                       | Support                |
+| ------------------------------ | ---------------------- |
+| 🟢 **Scratch**                 | **Supported in v4.0+** |
+| 🟢 **TurboWarp**               | **Supported**          |
+| 🟢 **Google Chrome**           | **Supported**          |
+| 🟡 **Other Chromium browsers** | May work               |
 
-> WarpVar is specifically designed around TurboWarp and may not function correctly on other platforms.
+> **v4.0 introduces support for Scratch's official website.** Earlier versions may not function correctly on Scratch.
 
 ---
 
@@ -131,7 +135,7 @@ If you'd like to help improve WarpVar:
 1. Fork this repository.
 2. Create a new branch.
 3. Make your changes.
-4. Test the extension with TurboWarp.
+4. Test the extension with Scratch and/or TurboWarp.
 5. Submit a Pull Request.
 
 ---
@@ -141,6 +145,7 @@ If you'd like to help improve WarpVar:
 * 🌐 **WarpVar Website:** https://warpvar.wasmer.app/
 * 📦 **Versions:** https://warpvar.wasmer.app/#versions
 * 💬 **Community / Support:** https://discord.gg/axAeTRFmUe
+* 🧪 **Test on Scratch:** https://scratch.mit.edu/
 * 🧪 **Test on TurboWarp:** https://turbowarp.org/
 
 ---
@@ -153,7 +158,7 @@ WarpVar is developed and maintained by:
 * **[1_FOLLOW](https://github.com/1-FOLLOW)** - Co-Founder & Co-Owner
 * **[CtrlAltSpace](https://github.com/CtrlAltSpace)** - Developer
 
-A special thank to **[CtrlAltSpace](https://github.com/CtrlAltSpace)** for contributing to WarpVar's development, testing, improvements, and ideas.
+A special thank you to **[CtrlAltSpace](https://github.com/CtrlAltSpace)** for contributing to WarpVar's development, testing, improvements, and ideas.
 
 All contributors are credited for their work and contributions to the project.
 
