@@ -149,12 +149,11 @@ If you'd like to help improve WarpVar:
 
 WarpVar is developed and maintained by:
 
-* **Dr_Animalis** - Creator & Lead Developer
-* **1_FOLLOW** - Co-Developer
-* **[CtrlAltSpace](https://github.com/CtrlAltSpace)** - Developer / Contributor
-[Discord](https://discord.com/users/1399691329671266304) · [GitHub](https://github.com/CtrlAltSpace)
+* **[Dr_Animalis](https://github.com/dranimalis)** - Founder, Owner & Lead Developer
+* **[1_FOLLOW](https://github.com/1-FOLLOW)** - Co-Founder & Co-Owner
+* **[CtrlAltSpace](https://github.com/CtrlAltSpace)** - Developer
 
-A special thanks to **[CtrlAltSpace](https://github.com/CtrlAltSpace)** for contributing to WarpVar's development, testing, improvements, and ideas.
+A special thank to **[CtrlAltSpace](https://github.com/CtrlAltSpace)** for contributing to WarpVar's development, testing, improvements, and ideas.
 
 All contributors are credited for their work and contributions to the project.
 
@@ -167,5 +166,5 @@ See the [`LICENSE`](LICENSE) file for license information.
 ---
 
 <p align="center">
-  Made by <a href="https://discord.com/users/1386885019397521419">Dr_Animalis</a> & <a href="https://discord.com/users/1349548957931405393">1_FOLLOW</a>
+  Made by <a href="https://discord.com/users/1386885019397521419">Dr_Animalis</a>, <a href="https://discord.com/users/1349548957931405393">1_FOLLOW</a>, & <a href="https://discord.com/users/1399691329671266304">CtrlAltSpace</a>
 </p>

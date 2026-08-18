@@ -3,6 +3,8 @@ const resultEl = document.getElementById("result");
 const searchBar = document.getElementById("searchBar");
 const foreverChk = document.getElementById("foreverChk");
 const intervalInput = document.getElementById("intervalMs");
+const applyBtn = document.getElementById("applyBtn");
+let applyBorderTimer;
 
 
 let allVars = []; // keep full list
@@ -65,7 +67,16 @@ searchBar.addEventListener("keydown", e => {
 
 // Handle Set button
 
-document.getElementById("applyBtn").addEventListener("click", async () => {
+applyBtn.addEventListener("click", async () => {
+  applyBtn.classList.remove("apply-animate");
+  void applyBtn.offsetWidth;
+  applyBtn.classList.add("apply-animate");
+  document.body.classList.add("apply-border");
+  clearTimeout(applyBorderTimer);
+  applyBorderTimer = setTimeout(() => {
+    document.body.classList.remove("apply-border");
+  }, 900);
+
   const varName = varSelect.value;
   const rawValue = document.getElementById("varValue").value.trim();
   const forever = document.getElementById("foreverChk").checked;

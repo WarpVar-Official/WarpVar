@@ -4,13 +4,120 @@
   <meta charset="utf-8" />
   <title>WarpVar (3.0)</title>
   <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    @property --border-angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    html {
+      margin: 0;
+      background: transparent;
+    }
+
     body {
       font-family: "Courier New", monospace;
-      width: 320px;
+      width: 400px;
+      margin: 0;
       padding: 16px;
-      background-color: #0a0a0a;
-      blur:
+      position: relative;
+      background-color: #101c25;
+      border-radius: 16px;
       color: #FFFFFF;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: inherit;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent 0deg,
+        transparent 80deg,
+        #ffffff 120deg,
+        #ff8400 155deg,
+        transparent 210deg,
+        transparent 360deg
+      );
+      pointer-events: none;
+      animation: borderSpin 2.4s linear infinite;
+      transition: opacity 240ms ease;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: inherit;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent 0deg,
+        transparent 45deg,
+        #ff8400 85deg,
+        #024968 125deg,
+        #ffffff 170deg,
+        transparent 230deg,
+        transparent 360deg
+      );
+      opacity: 0;
+      pointer-events: none;
+      animation: borderSpin 1.2s linear infinite;
+      transition: opacity 240ms ease;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+    }
+
+    body.apply-border::after {
+      opacity: 1;
+      animation: borderSpin 1.2s linear infinite, applyBorderFlash 650ms ease-out;
+    }
+
+    body.apply-border::before {
+      opacity: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes borderSpin {
+      to {
+        --border-angle: 360deg;
+      }
+    }
+
+    @keyframes applyBorderFlash {
+      0% {
+        filter: brightness(1.9);
+      }
+      100% {
+        filter: brightness(1);
+      }
     }
 
     .header {
@@ -20,7 +127,7 @@
 
     .logo {
       width: 48px;
-      margin: auto;
+      margin: 0 auto;
       display: block;
     }
 
@@ -32,13 +139,13 @@
 
     .beta {
       display: inline-block;
-      background: #FF0000;
+      background: #ff8400;
       color: #FFFFFF;
       font-size: 0.7rem;
       font-weight: bold;
       padding: 2px 6px;
       border-radius: 6px;
-      margin-left: 6px;
+      margin-left: -5px;
     }
 
     label {
@@ -48,13 +155,25 @@
       color: #FFFFFF;
     }
 
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .checkbox-text {
+      min-width: 0;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
     select,
     input,
     button {
       width: 100%;
       padding: 8px;
       margin-top: 6px;
-      background-color: #111;
+      background-color: #0d151b;
       border: 1px solid #FFFFFF;
       border-radius: 8px;
       color: #808080;
@@ -66,8 +185,15 @@
     select:hover,
     input:hover,
     button:hover {
-      background-color: #FFFFFF;
+      background-color: #111;
       box-shadow: 0 0 6px #F0F0F0;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-top: 0;
+      padding: 0;
+      flex: 0 0 auto;
     }
 
     button {
@@ -75,8 +201,8 @@
       text-transform: uppercase;
       font-weight: bold;
       margin-top: 14px;
-      background: #FFFFFF;
-      color: #0a0a0a;
+      background: #111;
+      color: #FFFFFF;
       border: none;
       box-shadow: 0 0 10px #F0F0F0;
     }
@@ -84,6 +210,25 @@
     button:active {
       transform: scale(0.97);
       box-shadow: 0 0 5px #F0F0F0;
+    }
+
+    button.apply-animate {
+      animation: applyPulse 420ms ease-out;
+    }
+
+    @keyframes applyPulse {
+      0% {
+        transform: scale(0.97);
+        box-shadow: 0 0 5px #F0F0F0;
+      }
+      45% {
+        transform: scale(1.03);
+        box-shadow: 0 0 18px #FFFFFF;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #F0F0F0;
+      }
     }
 
     #result {
@@ -123,16 +268,19 @@
     <input id="varValue" placeholder="e.g. 5000" />
   </label>
 
-  <label style="display:block;margin-top:8px;">
-    <input type="checkbox" id="foreverChk"> <strong>Forever</strong> (keep setting repeatedly)
-  </label>
   <label style="display:block;margin-top:6px;">
-    Interval (ms): <input id="intervalMs" placeholder="e.g. 500" style="width:80px" />
+    Interval (ms): <input id="intervalMs" placeholder="e.g. 500" />
+  </label>
+
+  <br>
+  <label class="checkbox-label">
+    <input type="checkbox" id="foreverChk">
+    <span class="checkbox-text"><strong>Forever</strong> (keep setting repeatedly)</span>
   </label>
   <button id="applyBtn">Apply</button>
   <div id="result"></div>
 
-  <div class="footer">For TurboWarp (Dev Only)</div>
+  <div class="footer">For TurboWarp only</div>
 
   <script src="popup.js"></script>
 </body>
