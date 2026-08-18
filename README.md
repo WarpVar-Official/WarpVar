@@ -145,6 +145,21 @@ If you'd like to help improve WarpVar:
 
 ---
 
+## 🤝 Credits
+
+WarpVar is developed and maintained by:
+
+* **Dr_Animalis** - Creator & Lead Developer
+* **1_FOLLOW** - Co-Developer
+* **[CtrlAltSpace](https://github.com/CtrlAltSpace)** - Developer / Contributor
+[Discord](https://discord.com/users/1399691329671266304) · [GitHub](https://github.com/CtrlAltSpace)
+
+A special thanks to **[CtrlAltSpace](https://github.com/CtrlAltSpace)** for contributing to WarpVar's development, testing, improvements, and ideas.
+
+All contributors are credited for their work and contributions to the project.
+
+---
+
 ## 📄 License
 
 See the [`LICENSE`](LICENSE) file for license information.
