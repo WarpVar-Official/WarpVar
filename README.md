@@ -90,8 +90,9 @@ For downloads, check the **[Versions](https://warpvar.wasmer.app/#versions)** pa
 
 ```text
 WarpVar/
-├── README.md
+├── CONTRIBUTORS.md
 ├── LICENSE
+├── README.md
 │
 └── versions/
     ├── WarpVar-v2.0/
