@@ -80,8 +80,9 @@ You can optionally click the **📌 Pin** icon to keep WarpVar easily accessible
 
 | Version  | Status    | Description                                                                               |
 | -------- | --------- | ----------------------------------------------------------------------------------------- |
-| **v4.0** | 🟢 Latest | Scratch support, improved detection, enhanced UI, better performance & advanced filtering |
-| **v3.0** | 🟡 Legacy | Enhanced detection, improved UI, better performance & advanced filtering                  |
+| **v4.1** | 🟢 Latest | Scratch support and improved UI to match v3.1 |
+| **v4.0** | 🔵 Stable | Scratch support, improved detection, enhanced UI, better performance & advanced filtering |
+| **v3.1** | 🟡 Legacy | Enhanced detection, improved UI, better performance & advanced filtering                  |
 | **v2.0** | ⚪ Legacy  | Stable version with basic variable listing and editing                                    |
 
 For downloads, check the **[Versions](https://warpvar.wasmer.app/#versions)** page.
@@ -96,8 +97,9 @@ WarpVar/
 │
 └── versions/
     ├── WarpVar-v2.0/
-    ├── WarpVar-v3.0/
+    ├── WarpVar-v3.1/
     └── WarpVar-v4.0/
+    └── WarpVar-v4.1/
 ```
 
 Each version is kept separately so older versions remain available without interfering with newer releases.
