@@ -63,7 +63,7 @@ For example:
 ```text
 WarpVar/
 └── versions/
-    └── WarpVar-v4.0/
+    └── WarpVar-v4.1/
 ```
 
 Select the version folder containing `manifest.json`.
