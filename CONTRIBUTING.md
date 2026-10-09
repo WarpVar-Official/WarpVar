@@ -15,8 +15,8 @@ If you use code from other open-source projects, please mention and credit the o
 ## Contributors
 
 ### Original Creators / Copyright Holders:
-- Dr_Animalis
-- 1_FOLLOW
+- [Dr_Animalis](https://github.com/dranimalis)
+- [1_FOLLOW](https://github.com/1-FOLLOW)
 
 ### Developer (Member):
-- CtrlAltSpace
+- [CtrlAltSpace](https://github.com/CtrlAltSpace)
