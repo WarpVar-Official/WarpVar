@@ -143,6 +143,10 @@ If you'd like to help improve WarpVar:
 4. Test the extension with Scratch and/or TurboWarp.
 5. Submit a Pull Request.
 
+Or:
+
+ * Make an Issue.
+
 ---
 
 ## 🔗 Links
